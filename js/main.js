@@ -82,7 +82,7 @@ const renderProducts = function (products) {
     productEditIcon.style.pointerEvents = "none";
     const productDelBtn = createElement("button", "btn rounded-0 btn-danger remove-button",);
     const productDelIcon = createElement("i", "fa-solid fa-trash");
-    productDelIcon.style.pointerEvents = "none"; // Bu kodimizda iconka bosilmaydi
+    productDelIcon.style.pointerEvents = "none"; 
     /// ADD CLASS
     productLine.classList.add("col-4");
     productCard.classList.add("card");
@@ -189,10 +189,6 @@ const editProductModal = new bootstrap.Modal(editProductModalEl);
 //ADDFORM
 editForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
-  // const elements = evt.target.elements;
-  // const priceInput = elements.price;
-  // const manufacturerInput = elements["product-manufacturer"];
-  // const benefitsInput = elements.benefits;
   const editingId = +evt.target.dataset.editingId;
 
   const titleValue = titleEdit.value;
@@ -235,7 +231,7 @@ filterForm.addEventListener("submit", function (evt) {
       return toProduct.price <= toValue;
     })
     .filter(function (product) {
-      // return product.title.toLowerCase().includes(searchValue.toLowerCase());
+      
       const searchRegExp = new RegExp(searchValue, "gi");
       return product.title.match(searchRegExp);
     });
